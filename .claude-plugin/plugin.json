@@ -18,7 +18,8 @@
     "security",
     "workflow"
   ],
-  "skills": ["./skills/", "./commands/"],
+  "commands": ["./commands/"],
+  "skills": ["./skills/"],
   "agents": [
     "./agents/architect.md",
     "./agents/build-error-resolver.md",
