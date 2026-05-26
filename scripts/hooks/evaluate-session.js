@@ -4,7 +4,7 @@
  *
  * Cross-platform (Windows, macOS, Linux)
  *
- * Runs on Stop hook to extract reusable patterns from Claude Code sessions
+ * Runs on Stop hook to extract reusable patterns from Claude Code / Codex sessions
  *
  * Why Stop hook instead of UserPromptSubmit:
  * - Stop runs once at session end (lightweight)
@@ -15,6 +15,7 @@ const path = require('path');
 const fs = require('fs');
 const {
   getLearnedSkillsDir,
+  getTranscriptPath,
   ensureDir,
   readFile,
   countInFile,
@@ -49,8 +50,8 @@ async function main() {
   // Ensure learned skills directory exists
   ensureDir(learnedSkillsPath);
 
-  // Get transcript path from environment (set by Claude Code)
-  const transcriptPath = process.env.CLAUDE_TRANSCRIPT_PATH;
+  // Get transcript path from environment when the runtime provides one.
+  const transcriptPath = getTranscriptPath();
 
   if (!transcriptPath || !fs.existsSync(transcriptPath)) {
     process.exit(0);

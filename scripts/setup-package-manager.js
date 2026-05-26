@@ -21,18 +21,22 @@ const {
   detectFromLockFile,
   detectFromPackageJson
 } = require('./lib/package-manager');
+const { getAgentRuntime, getConfigDirLabel } = require('./lib/utils');
 
 function showHelp() {
+  const configDirLabel = getConfigDirLabel();
+  const projectConfigDir = getAgentRuntime() === 'codex' ? '.codex' : '.claude';
+
   console.log(`
-Package Manager Setup for Claude Code
+Package Manager Setup for Claude Code / Codex
 
 Usage:
   node scripts/setup-package-manager.js [options] [package-manager]
 
 Options:
   --detect        Detect and show current package manager
-  --global <pm>   Set global preference (saves to ~/.claude/package-manager.json)
-  --project <pm>  Set project preference (saves to .claude/package-manager.json)
+  --global <pm>   Set global preference (saves to ${configDirLabel}/package-manager.json)
+  --project <pm>  Set project preference (saves to ${projectConfigDir}/package-manager.json)
   --list          List available package managers
   --help          Show this help message
 
@@ -62,6 +66,7 @@ function detectAndShow() {
   const available = getAvailablePackageManagers();
   const fromLock = detectFromLockFile();
   const fromPkg = detectFromPackageJson();
+  const envValue = process.env.CODEX_PACKAGE_MANAGER || process.env.CLAUDE_PACKAGE_MANAGER;
 
   console.log('\n=== Package Manager Detection ===\n');
 
@@ -73,7 +78,7 @@ function detectAndShow() {
   console.log('Detection results:');
   console.log(`  From package.json: ${fromPkg || 'not specified'}`);
   console.log(`  From lock file: ${fromLock || 'not found'}`);
-  console.log(`  Environment var: ${process.env.CLAUDE_PACKAGE_MANAGER || 'not set'}`);
+  console.log(`  Environment var: ${envValue || 'not set'}`);
   console.log('');
 
   console.log('Available package managers:');
@@ -127,7 +132,7 @@ function setGlobal(pmName) {
   try {
     setPreferredPackageManager(pmName);
     console.log(`\n✓ Global preference set to: ${pmName}`);
-    console.log('  Saved to: ~/.claude/package-manager.json');
+    console.log(`  Saved to: ${getConfigDirLabel()}/package-manager.json`);
     console.log('');
   } catch (err) {
     console.error(`Error: ${err.message}`);
@@ -145,7 +150,7 @@ function setProject(pmName) {
   try {
     setProjectPackageManager(pmName);
     console.log(`\n✓ Project preference set to: ${pmName}`);
-    console.log('  Saved to: .claude/package-manager.json');
+    console.log(`  Saved to: ${getAgentRuntime() === 'codex' ? '.codex' : '.claude'}/package-manager.json`);
     console.log('');
   } catch (err) {
     console.error(`Error: ${err.message}`);

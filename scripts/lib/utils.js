@@ -1,5 +1,5 @@
 /**
- * Cross-platform utility functions for Claude Code hooks and scripts
+ * Cross-platform utility functions for Claude Code / Codex hooks and scripts
  * Works on Windows, macOS, and Linux
  */
 
@@ -21,10 +21,53 @@ function getHomeDir() {
 }
 
 /**
- * Get the Claude config directory
+ * Detect the current agent runtime from available environment variables.
+ */
+function getAgentRuntime() {
+  if (
+    process.env.CODEX_THREAD_ID ||
+    process.env.CODEX_CI ||
+    /codex/i.test(process.env.CODEX_INTERNAL_ORIGINATOR_OVERRIDE || '')
+  ) {
+    return 'codex';
+  }
+
+  if (
+    process.env.CLAUDE_SESSION_ID ||
+    process.env.CLAUDE_TRANSCRIPT_PATH ||
+    process.env.CLAUDE_PLUGIN_ROOT
+  ) {
+    return 'claude';
+  }
+
+  return 'claude';
+}
+
+/**
+ * Get the active agent config directory.
+ */
+function getAgentConfigDir() {
+  const explicitHome = process.env.CODEX_HOME || process.env.CLAUDE_HOME;
+  if (explicitHome) {
+    return explicitHome;
+  }
+
+  const configDirName = getAgentRuntime() === 'codex' ? '.codex' : '.claude';
+  return path.join(getHomeDir(), configDirName);
+}
+
+/**
+ * Backward-compatible alias for the active agent config directory.
  */
 function getClaudeDir() {
-  return path.join(getHomeDir(), '.claude');
+  return getAgentConfigDir();
+}
+
+/**
+ * Get the home config directory label for messages.
+ */
+function getConfigDirLabel() {
+  return getAgentRuntime() === 'codex' ? '~/.codex' : '~/.claude';
 }
 
 /**
@@ -105,15 +148,23 @@ function getProjectName() {
 }
 
 /**
- * Get short session ID from CLAUDE_SESSION_ID environment variable
+ * Get short session ID from runtime environment variables
  * Returns last 8 characters, falls back to project name then 'default'
  */
 function getSessionIdShort(fallback = 'default') {
-  const sessionId = process.env.CLAUDE_SESSION_ID;
+  const sessionId = process.env.CLAUDE_SESSION_ID || process.env.CODEX_THREAD_ID;
   if (sessionId && sessionId.length > 0) {
-    return sessionId.slice(-8);
+    const compactId = sessionId.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    return compactId.slice(-8) || sessionId.slice(-8);
   }
   return getProjectName() || fallback;
+}
+
+/**
+ * Get transcript path from supported runtime environment variables.
+ */
+function getTranscriptPath() {
+  return process.env.CLAUDE_TRANSCRIPT_PATH || process.env.CODEX_TRANSCRIPT_PATH || null;
 }
 
 /**
@@ -214,14 +265,14 @@ async function readStdinJson() {
 }
 
 /**
- * Log to stderr (visible to user in Claude Code)
+ * Log to stderr (visible to the user in the active runtime)
  */
 function log(message) {
   console.error(message);
 }
 
 /**
- * Output to stdout (returned to Claude)
+ * Output to stdout (returned to the active runtime)
  */
 function output(data) {
   if (typeof data === 'object') {
@@ -386,8 +437,11 @@ module.exports = {
   isLinux,
 
   // Directories
+  getAgentRuntime,
+  getAgentConfigDir,
   getHomeDir,
   getClaudeDir,
+  getConfigDirLabel,
   getSessionsDir,
   getAliasesPath,
   getLearnedSkillsDir,
@@ -401,6 +455,7 @@ module.exports = {
 
   // Session/Project
   getSessionIdShort,
+  getTranscriptPath,
   getGitRepoName,
   getProjectName,
 
