@@ -1,39 +1,39 @@
 ---
 name: configure-ecc
-description: Interactive installer for Everything Claude Code — guides users through selecting and installing skills and rules to user-level or project-level directories, verifies paths, and optionally optimizes installed files.
+description: Interactive installer for Everything Coding Agent — guides users through selecting and installing skills and rules to user-level or project-level directories, verifies paths, and optionally optimizes installed files.
 ---
 
-# Configure Everything Claude Code (ECC)
+# Configure Everything Coding Agent (ECA)
 
-An interactive, step-by-step installation wizard for the Everything Claude Code project. Uses `AskUserQuestion` to guide users through selective installation of skills and rules, then verifies correctness and offers optimization.
+An interactive, step-by-step installation wizard for the Everything Coding Agent project. Uses `AskUserQuestion` to guide users through selective installation of skills and rules, then verifies correctness and offers optimization.
 
 ## When to Activate
 
-- User says "configure ecc", "install ecc", "setup everything claude code", or similar
+- User says "configure eca", "configure ecc", "install eca", "install ecc", "setup everything coding agent", or similar
 - User wants to selectively install skills or rules from this project
-- User wants to verify or fix an existing ECC installation
+- User wants to verify or fix an existing ECA installation
 - User wants to optimize installed skills or rules for their project
 
 ## Prerequisites
 
 This skill must be accessible to Claude Code before activation. Two ways to bootstrap:
-1. **Via Plugin**: `/plugin install everything-claude-code` — the plugin loads this skill automatically
+1. **Via Plugin**: `/plugin install everything-coding-agent` — the plugin loads this skill automatically
 2. **Manual**: Copy only this skill to `~/.claude/skills/configure-ecc/SKILL.md`, then activate by saying "configure ecc"
 
 ---
 
-## Step 0: Clone ECC Repository
+## Step 0: Clone ECA Repository
 
-Before any installation, clone the latest ECC source to `/tmp`:
+Before any installation, clone the latest ECA source to `/tmp`:
 
 ```bash
-rm -rf /tmp/everything-claude-code
-git clone https://github.com/affaan-m/everything-claude-code.git /tmp/everything-claude-code
+rm -rf /tmp/everything-coding-agent
+git clone https://github.com/n-seiji/everything-coding-agent.git /tmp/everything-coding-agent
 ```
 
-Set `ECC_ROOT=/tmp/everything-claude-code` as the source for all subsequent copy operations.
+Set `ECA_ROOT=/tmp/everything-coding-agent` as the source for all subsequent copy operations.
 
-If the clone fails (network issues, etc.), use `AskUserQuestion` to ask the user to provide a local path to an existing ECC clone.
+If the clone fails (network issues, etc.), use `AskUserQuestion` to ask the user to provide a local path to an existing ECA clone.
 
 ---
 
@@ -42,7 +42,7 @@ If the clone fails (network issues, etc.), use `AskUserQuestion` to ask the user
 Use `AskUserQuestion` to ask the user where to install:
 
 ```
-Question: "Where should ECC components be installed?"
+Question: "Where should ECA components be installed?"
 Options:
   - "User-level (~/.claude/)" — "Applies to all your Claude Code projects"
   - "Project-level (.claude/)" — "Applies only to the current project"
@@ -105,7 +105,7 @@ For each selected category, print the full list of skills below and ask the user
 | `jpa-patterns` | JPA/Hibernate entity design, relationships, query optimization, transactions |
 | `postgres-patterns` | PostgreSQL query optimization, schema design, indexing, security |
 
-**Category: Workflow & Quality (8 skills)**
+**Category: Workflow & Quality (6 skills)**
 
 | Skill | Description |
 |-------|-------------|
@@ -115,8 +115,6 @@ For each selected category, print the full list of skills below and ask the user
 | `iterative-retrieval` | Progressive context refinement for subagent context problem |
 | `security-review` | Security checklist: auth, input, secrets, API, payment features |
 | `strategic-compact` | Suggests manual context compaction at logical intervals |
-| `tdd-workflow` | Enforces TDD with 80%+ coverage: unit, integration, E2E |
-| `verification-loop` | Verification and quality loop patterns |
 
 **Standalone**
 
@@ -238,7 +236,7 @@ Options:
    - Security requirements
 3. Edit the rule files in-place at the installation target
 
-**Critical**: Only modify files in the installation target (`$TARGET/`), NEVER modify files in the source ECC repository (`$ECC_ROOT/`).
+**Critical**: Only modify files in the installation target (`$TARGET/`), NEVER modify files in the source ECA repository (`$ECA_ROOT/`).
 
 ---
 
@@ -247,13 +245,13 @@ Options:
 Clean up the cloned repository from `/tmp`:
 
 ```bash
-rm -rf /tmp/everything-claude-code
+rm -rf /tmp/everything-coding-agent
 ```
 
 Then print a summary report:
 
 ```
-## ECC Installation Complete
+## ECA Installation Complete
 
 ### Installation Target
 - Level: [user-level / project-level / both]
