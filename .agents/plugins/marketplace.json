@@ -8,7 +8,7 @@
       "name": "everything-coding-agent",
       "source": {
         "source": "local",
-        "path": "."
+        "path": "./plugins/everything-coding-agent"
       },
       "policy": {
         "installation": "AVAILABLE",
