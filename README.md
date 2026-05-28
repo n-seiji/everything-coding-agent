@@ -41,7 +41,7 @@ codex plugin marketplace add /absolute/path/to/everything-coding-agent
 codex plugin add everything-coding-agent@n-seiji
 ```
 
-Codex では Claude Code の top-level `commands/` はそのまま slash command としては読まれないため、共通化した workflow は `skills/everything-coding-agent/` に配置する。まず `/review-pr` 相当を `skills/everything-coding-agent/commands/review-pr.md` として提供している。
+Codex では Claude Code の top-level `commands/` はそのまま slash command としては読まれないため、候補に出したい workflow は `skills/<name>/SKILL.md` として配置する。`review-pr` は `plugins/everything-coding-agent/skills/review-pr/SKILL.md` として提供しているため、install 後は `/review-pr` 相当で呼び出せる。
 
 ### dotfiles 経由（自分用 / 推奨）
 
