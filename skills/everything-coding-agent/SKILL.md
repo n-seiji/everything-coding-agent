@@ -47,7 +47,7 @@ Look for related PRs before reviewing:
 If multiple PRs are found, summarize them and ask the user which ones to
 include. If none are found, review only the main PR.
 
-### 3. Gather Diff and Project Guidance
+### 3. Gather Diff, Rules, and Project Guidance
 
 For every selected PR:
 
@@ -56,13 +56,39 @@ gh pr diff <number> -R <owner>/<repo>
 gh pr diff <number> -R <owner>/<repo> --name-only
 ```
 
-Read available project guidance before judging style or architecture:
+Before judging style, architecture, testing, or acceptable risk, actively
+search the target repository for rules and documentation. Use local files when
+there is a checkout/worktree; otherwise use GitHub APIs or the PR diff context
+available through `gh`.
 
-- `AGENTS.md`
-- `CLAUDE.md`
-- `README.md`
-- language-specific lint/test config
-- docs under `docs/guideline/` when present
+Look for, at minimum:
+
+- agent instructions: `AGENTS.md`, `CLAUDE.md`, `.cursorrules`,
+  `.cursor/rules/*`, `.github/copilot-instructions.md`
+- repository docs: `README.md`, `CONTRIBUTING.md`, `docs/**`,
+  `docs/guideline/**`, architecture decision records
+- review and issue templates: `.github/pull_request_template*`,
+  `.github/ISSUE_TEMPLATE/**`
+- language/tooling rules: lint, formatter, typecheck, test, OpenAPI, schema,
+  migration, CI, or package-manager config
+- domain-specific docs referenced by the changed files or PR body
+
+Useful local search commands:
+
+```bash
+rg --files -g 'AGENTS.md' -g 'CLAUDE.md' -g '.cursorrules' -g '.cursor/rules/**' -g '.github/copilot-instructions.md'
+rg --files docs .github | sort
+rg --files | rg '(^|/)(README|CONTRIBUTING|architecture|guideline|openapi|schema|migration|lint|test|ci|pull_request_template)'
+```
+
+When guidance is found:
+
+- summarize the relevant rules before the findings or in the PR summary
+- apply those rules as review criteria, not optional background
+- cite the rule/doc path in any finding that depends on it
+- if a rule conflicts with generic best practice, prefer the repository rule
+  unless it creates a clear security, data integrity, or correctness problem
+- if no guidance is found, say so and proceed with the general review criteria
 
 Prefer reviewing from a local checkout or worktree when available. If a local
 checkout is not available, use the `gh pr diff` output directly.
@@ -112,9 +138,9 @@ supports them; otherwise do the passes sequentially.
 
 **Project-specific review**
 
-Apply repository guidance and business rules. In this repository family, pay
-extra attention to financial correctness, tenant scoping, migration safety,
-OpenAPI-driven API changes, and data integrity.
+Apply discovered repository rules, docs, and business rules. In this repository
+family, pay extra attention to financial correctness, tenant scoping, migration
+safety, OpenAPI-driven API changes, and data integrity.
 
 ### 6. Output Format
 
@@ -147,6 +173,7 @@ Lead with findings. Keep summaries secondary.
 
 - Verdict: `APPROVE`, `COMMENT`, or `REQUEST_CHANGES`
 - Reviewed PRs: `<owner>/<repo>#<number>`
+- Repository guidance used: `<paths read, or "none found">`
 - Tests or checks inspected/run: `<commands or not run>`
 ```
 

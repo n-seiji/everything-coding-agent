@@ -8,5 +8,6 @@ Run the `everything-coding-agent` PR review workflow for:
 $ARGUMENTS
 
 First read the parent skill's `SKILL.md`, then follow its PR Review Workflow.
-Resolve the PR or linked PRs, gather diffs and project guidance, produce
-severity-ranked findings, and ask before posting any GitHub comments.
+Resolve the PR or linked PRs, gather diffs, actively search the target
+repository for rules/docs, apply any discovered guidance as review criteria,
+produce severity-ranked findings, and ask before posting any GitHub comments.
