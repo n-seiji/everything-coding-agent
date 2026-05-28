@@ -1,12 +1,12 @@
 {
-  "name": "everything-claude-code",
+  "name": "everything-coding-agent",
   "version": "1.4.1",
-  "description": "n-seiji's Claude Code plugin: agents, skills, hooks, and commands (fork of affaan-m/everything-claude-code)",
+  "description": "n-seiji's coding agent plugin: agents, skills, hooks, and commands (fork of affaan-m/everything-claude-code)",
   "author": {
     "name": "Affaan Mustafa (forked by n-seiji)"
   },
-  "homepage": "https://github.com/n-seiji/everything-claude-code",
-  "repository": "https://github.com/n-seiji/everything-claude-code",
+  "homepage": "https://github.com/n-seiji/everything-coding-agent",
+  "repository": "https://github.com/n-seiji/everything-coding-agent",
   "license": "MIT",
   "keywords": [
     "claude-code",
