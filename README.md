@@ -25,18 +25,20 @@ Claude Code と Codex の両方で使える coding agent plugin として、agen
 
 ### Codex で使う場合
 
-Codex は `.codex-plugin/plugin.json` から `skills/` を読み込む。Webwright と同じく、リポジトリを marketplace として追加してから plugin browser で install する。
+Codex CLI は `.agents/plugins/marketplace.json` を marketplace index として読み、インストール対象の plugin は `.codex-plugin/plugin.json` から `skills/` を読み込む。
+リポジトリを marketplace として追加してから plugin を install する。
 
 ```text
 codex plugin marketplace add n-seiji/everything-coding-agent
-codex
-/plugins
+codex plugin list | rg -i everything-coding-agent
+codex plugin add everything-coding-agent@n-seiji
 ```
 
 ローカル checkout を使う場合:
 
 ```text
 codex plugin marketplace add /absolute/path/to/everything-coding-agent
+codex plugin add everything-coding-agent@n-seiji
 ```
 
 Codex では Claude Code の top-level `commands/` はそのまま slash command としては読まれないため、共通化した workflow は `skills/everything-coding-agent/` に配置する。まず `/review-pr` 相当を `skills/everything-coding-agent/commands/review-pr.md` として提供している。
