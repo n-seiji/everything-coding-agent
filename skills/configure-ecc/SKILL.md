@@ -1,6 +1,6 @@
 ---
 name: configure-ecc
-description: Interactive installer for Everything Coding Agent — guides users through selecting and installing skills and rules to user-level or project-level directories, verifies paths, and optionally optimizes installed files.
+description: Use when installing or reconfiguring Everything Coding Agent.
 ---
 
 # Configure Everything Coding Agent (ECA)
@@ -105,7 +105,7 @@ For each selected category, print the full list of skills below and ask the user
 | `jpa-patterns` | JPA/Hibernate entity design, relationships, query optimization, transactions |
 | `postgres-patterns` | PostgreSQL query optimization, schema design, indexing, security |
 
-**Category: Workflow & Quality (6 skills)**
+**Category: Workflow & Quality (5 skills)**
 
 | Skill | Description |
 |-------|-------------|
@@ -114,13 +114,6 @@ For each selected category, print the full list of skills below and ask the user
 | `eval-harness` | Formal evaluation framework for eval-driven development (EDD) |
 | `iterative-retrieval` | Progressive context refinement for subagent context problem |
 | `security-review` | Security checklist: auth, input, secrets, API, payment features |
-| `strategic-compact` | Suggests manual context compaction at logical intervals |
-
-**Standalone**
-
-| Skill | Description |
-|-------|-------------|
-| `project-guidelines-example` | Template for creating project-specific skills |
 
 ### 2c: Execute Installation
 

@@ -1,6 +1,6 @@
 ---
 name: python-review
-description: Review Python changes for correctness, typing, security, style, packaging, and tests. Use when the user invokes python-review or asks for Python-specific review.
+description: Review changed Python code. Use when explicitly invoking the python-review workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "everything-coding-agent",
-  "version": "1.4.2",
-  "description": "n-seiji's coding agent plugin: agents, skills, hooks, and commands (fork of affaan-m/everything-claude-code)",
+  "version": "1.4.3",
+  "description": "Focused coding workflows, review guides, agents, and commands for Claude Code.",
   "author": {
     "name": "Affaan Mustafa (forked by n-seiji)"
   },

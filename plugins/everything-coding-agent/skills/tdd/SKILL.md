@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Implement changes with a red-green-refactor test-driven workflow. Use when the user invokes tdd or asks to write tests first.
+description: Implement a change test-first. Use when explicitly invoking the tdd workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

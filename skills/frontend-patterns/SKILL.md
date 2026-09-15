@@ -1,6 +1,6 @@
 ---
 name: frontend-patterns
-description: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+description: Use when designing a React or Next.js state, component, or performance boundary.
 ---
 
 # Frontend Development Patterns

@@ -1,7 +1,7 @@
 {
   "name": "everything-coding-agent",
-  "version": "1.4.2",
-  "description": "n-seiji's coding agent plugin: shared skills and workflows for Codex and Claude Code.",
+  "version": "1.4.3",
+  "description": "Explicit coding workflows and repository-guided PR review for Codex.",
   "author": {
     "name": "Affaan Mustafa (forked by n-seiji)"
   },
@@ -21,10 +21,10 @@
   "interface": {
     "displayName": "Everything Coding Agent",
     "shortDescription": "Shared coding-agent review and workflow skills",
-    "longDescription": "Provides shared coding-agent workflows for PR review, code review, TDD, and development automation. Codex loads the skills directory directly; Claude Code continues to use the existing plugin manifest and top-level commands.",
+    "longDescription": "Provides explicit development workflow skills plus repository-guided GitHub PR review. Command-like skills stay available from the skill picker without being injected implicitly.",
     "developerName": "n-seiji",
     "category": "Productivity",
-    "defaultPrompt": "Use everything-coding-agent workflows for PR review, code review, and development automation.",
+    "defaultPrompt": "Use $review-pr to review a GitHub pull request against its repository guidance.",
     "capabilities": [
       "Read",
       "Write"

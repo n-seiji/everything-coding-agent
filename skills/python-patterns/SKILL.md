@@ -1,6 +1,6 @@
 ---
 name: python-patterns
-description: Pythonic idioms, PEP 8 standards, type hints, and best practices for building robust, efficient, and maintainable Python applications.
+description: Use when project rules do not answer a Python API, typing, resource, or package-design question.
 ---
 
 # Python Development Patterns

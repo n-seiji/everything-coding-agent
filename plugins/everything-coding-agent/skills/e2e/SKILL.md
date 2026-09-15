@@ -1,6 +1,6 @@
 ---
 name: e2e
-description: Design, run, or debug end-to-end tests, especially Playwright tests. Use when the user invokes e2e or asks to verify a browser/user journey.
+description: Create or debug an end-to-end test. Use when explicitly invoking the e2e workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

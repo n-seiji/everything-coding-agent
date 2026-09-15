@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review local code changes for correctness, security, maintainability, tests, and repository rule compliance. Use when the user invokes code-review or asks for a review of uncommitted changes.
+description: Review the current local diff. Use when explicitly invoking the code-review workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ui-directions
-description: Use when the user says 「デザインパターン提案して」「UI の案いくつか」「どんな見た目がいいか迷ってる」, when a screen family (一覧/設定/詳細) needs a shared visual pattern, or before building a new area's screens.
+description: Use when proposing multiple visual directions for a new screen or related screen family.
 ---
 
 # UI Directions

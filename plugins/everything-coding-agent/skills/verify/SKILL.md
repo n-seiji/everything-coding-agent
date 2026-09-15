@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Run project verification checks and report readiness. Use when the user invokes verify or asks whether the current work is ready.
+description: Run repository verification checks. Use when explicitly invoking the verify workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

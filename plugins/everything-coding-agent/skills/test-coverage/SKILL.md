@@ -1,6 +1,6 @@
 ---
 name: test-coverage
-description: Analyze test coverage and add focused missing tests. Use when the user invokes test-coverage or asks to improve coverage.
+description: Add tests for meaningful coverage gaps. Use when explicitly invoking the test-coverage workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

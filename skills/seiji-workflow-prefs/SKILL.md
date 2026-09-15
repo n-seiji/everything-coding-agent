@@ -1,6 +1,6 @@
 ---
 name: seiji-workflow-prefs
-description: Use when doing development work for seiji (n-seiji) — creating GitHub issues, opening or updating PRs, handling PR review comments from AI reviewers/bots, branching, git worktree work, commits/pushes, delegating implementation to Codex, deploying, or reporting work status.
+description: Use when managing issues, branches, worktrees, commits, PRs, deployment, or review feedback for seiji.
 ---
 
 # seiji のワークフローの好み

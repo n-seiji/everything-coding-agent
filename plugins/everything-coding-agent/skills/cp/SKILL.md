@@ -1,6 +1,6 @@
 ---
 name: cp
-description: Commit and push the current changes with a clear conventional commit message. Use when the user invokes cp or asks to commit and push local work.
+description: Commit and push selected local changes. Use when explicitly invoking the cp workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

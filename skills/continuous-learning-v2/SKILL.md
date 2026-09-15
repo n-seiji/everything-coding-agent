@@ -1,6 +1,6 @@
 ---
 name: continuous-learning-v2
-description: Instinct-based learning system that observes sessions via hooks, creates atomic instincts with confidence scoring, and evolves them into skills/commands/agents.
+description: Use when explicitly asked to manage confidence-scored learned instincts from agent sessions.
 version: 2.0.0
 ---
 

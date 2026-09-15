@@ -1,6 +1,6 @@
 ---
 name: draft-pr
-description: Create or prepare a draft pull request for the current branch. Use when the user invokes draft-pr or asks to open a draft PR.
+description: Open a draft PR for the current branch. Use when explicitly invoking the draft-pr workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: build-fix
-description: Incrementally diagnose and fix project build errors. Use when the user invokes build-fix, asks to fix build failures, or provides TypeScript, JavaScript, or general build errors.
+description: Fix a reproducible project build failure. Use when explicitly invoking the build-fix workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

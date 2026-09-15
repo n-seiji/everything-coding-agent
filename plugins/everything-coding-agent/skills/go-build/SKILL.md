@@ -1,6 +1,6 @@
 ---
 name: go-build
-description: Diagnose and fix Go build, vet, module, or linter failures incrementally. Use when the user invokes go-build or asks to fix Go compilation errors.
+description: Fix a Go build or static-analysis failure. Use when explicitly invoking the go-build workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

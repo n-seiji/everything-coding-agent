@@ -1,6 +1,6 @@
 ---
 name: plan
-description: Create an implementation plan before changing code. Use when the user invokes plan, asks for a plan, or the task is broad, risky, or ambiguous.
+description: Create an implementation plan without editing code. Use when explicitly invoking the plan workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

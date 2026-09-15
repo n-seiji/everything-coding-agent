@@ -1,6 +1,6 @@
 ---
 name: update-docs
-description: Update project documentation from current source-of-truth files and repository behavior. Use when the user invokes update-docs or asks to refresh docs.
+description: Refresh project documentation from repository sources. Use when explicitly invoking the update-docs workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

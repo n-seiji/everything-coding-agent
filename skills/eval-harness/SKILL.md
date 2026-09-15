@@ -1,6 +1,6 @@
 ---
 name: eval-harness
-description: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles
+description: Use when defining or running a formal evaluation for a Claude Code workflow.
 tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 

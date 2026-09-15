@@ -13,7 +13,7 @@
         "source": "github",
         "repo": "n-seiji/everything-coding-agent"
       },
-      "description": "Complete collection of agents, skills, hooks, commands, and rules evolved over 10+ months of intensive daily use",
+      "description": "Focused coding workflows, review guides, agents, and commands for Claude Code",
       "author": {
         "name": "Affaan Mustafa (forked by n-seiji)"
       },

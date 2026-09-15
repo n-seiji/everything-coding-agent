@@ -9,7 +9,7 @@ Claude Code と Codex の両方で使える coding agent plugin として、agen
 - `.claude-plugin/marketplace.json` を `n-seiji` namespace で公開
 - `.codex-plugin/plugin.json` を追加し、Codex から `plugins/everything-coding-agent/skills/` を読み込めるようにした
 - 旧 `install.sh` ベースのインストール経路（`.claude/settings.json`、`rules/` 含む）は廃止
-- Codex で `/` 候補に出したい workflow を `plugins/everything-coding-agent/skills/*/SKILL.md` として公開
+- Codex で明示実行する workflow と repository-guided PR review を `plugins/everything-coding-agent/skills/*/SKILL.md` として公開
 - Claude Code 固有/実験系の古い slash command を削除し、保守対象の workflow に整理
 - 新規コマンドを追加:
   - `/cp` — commit and push
@@ -43,7 +43,7 @@ codex plugin marketplace add /absolute/path/to/everything-coding-agent
 codex plugin add everything-coding-agent@n-seiji
 ```
 
-Codex では Claude Code の top-level `commands/` はそのまま slash command としては読まれないため、候補に出したい workflow は `plugins/everything-coding-agent/skills/<name>/SKILL.md` として配置している。install 後は `/everything`、`/review`、`/go`、`/tdd` などで候補を絞り込める。
+Codex では Claude Code の top-level `commands/` はそのまま slash command としては読まれないため、候補に出したい workflow は `plugins/everything-coding-agent/skills/<name>/SKILL.md` として配置している。command 型 skill は明示実行専用で、通常の依頼時には context へ自動注入しない。`review-pr` だけは repository guidance を使う固有 workflow として暗黙 invocation を許可する。
 
 インストール済み plugin を更新する場合は、marketplace を更新してから plugin を入れ直す。
 
@@ -64,11 +64,12 @@ symlink + `enabledPlugins` で有効化する。`home-manager switch` で反映�
 | 種別 | パス | 用途 |
 |------|------|------|
 | agents | `agents/*.md` | planner, code-reviewer, tdd-guide, ui-verifier, design-mockup-author ほか 10 種の subagent |
-| skills | `skills/*/SKILL.md` | Claude Code 向けの upstream skills |
-| codex skills | `plugins/everything-coding-agent/skills/*/SKILL.md` | Codex の `/` 候補に出す workflow skills |
+| skills | `skills/*/SKILL.md` | Claude Code 向けの task-specific skills |
+| codex skills | `plugins/everything-coding-agent/skills/*/SKILL.md` | Codex の明示 workflow と PR review skill |
 | shared commands | `skills/everything-coding-agent/commands/*.md` | Codex / Claude Code 両対応の skill command |
 | commands | `commands/*.md` | Claude Code 向け slash command |
 | hooks | `hooks/` | PreToolUse / PostToolUse / Stop |
+| examples | `docs/examples/*.md` | install 対象外の skill authoring examples |
 
 ## 配布外（dotfiles 側で管理）
 

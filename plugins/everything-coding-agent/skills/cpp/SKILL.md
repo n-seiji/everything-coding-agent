@@ -1,6 +1,6 @@
 ---
 name: cpp
-description: Commit, push, and open a draft pull request. Use when the user invokes cpp or asks to commit, push, and create a PR.
+description: Commit, push, and open a draft PR. Use when explicitly invoking the cpp workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: ui-verify
-description: Use when the user says 「動作確認して」「スクショ撮って」「実機で見て」, after any UI change before reporting it done, or when writing a PR's 動作確認 section.
+description: Use when explicitly asked to inspect a UI in a real browser or capture verification screenshots.
 ---
 
 # UI Verify

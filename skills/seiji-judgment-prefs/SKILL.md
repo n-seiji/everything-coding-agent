@@ -1,6 +1,6 @@
 ---
 name: seiji-judgment-prefs
-description: Use when making design, scoping, or technical decisions for seiji (n-seiji) — deciding what to build or cut, sizing scope, choosing between approaches, weighing DB schema changes or migrations, splitting work into separate PRs/issues, or judging robustness, cost, and compliance impact.
+description: Use when making scope, architecture, migration, cost, or compliance tradeoffs for seiji.
 ---
 
 # seiji の判断・意思決定の好み
