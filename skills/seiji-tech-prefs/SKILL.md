@@ -1,6 +1,6 @@
 ---
 name: seiji-tech-prefs
-description: Use when writing or reviewing code for seiji (n-seiji) — building UI, calling or defining APIs, writing SQL, structuring React/TypeScript, styling with Tailwind, handling errors, designing data for later aggregation, or reviewing a diff. Covers seiji's concrete technical and coding preferences.
+description: Use when writing or reviewing UI, API, SQL, React, TypeScript, or Tailwind code for seiji.
 ---
 
 # seiji's technical and coding preferences

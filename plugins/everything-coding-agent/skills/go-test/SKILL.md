@@ -1,6 +1,6 @@
 ---
 name: go-test
-description: Add or run Go tests using idiomatic table-driven testing and focused verification. Use when the user invokes go-test or asks for Go test coverage.
+description: Add or run focused Go tests. Use when explicitly invoking the go-test workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 

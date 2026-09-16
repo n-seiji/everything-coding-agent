@@ -1,6 +1,6 @@
 ---
 name: go-review
-description: Review Go changes for idioms, correctness, concurrency, context usage, errors, security, and tests. Use when the user invokes go-review or asks for Go-specific review.
+description: Review changed Go code. Use when explicitly invoking the go-review workflow.
 allowed-tools: Bash, Read, bash, read_file
 ---
 

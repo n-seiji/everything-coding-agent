@@ -1,6 +1,6 @@
 ---
 name: review-pr
-description: Review a GitHub pull request using the everything-coding-agent multi-perspective PR review workflow. Use when the user invokes review-pr, asks to review a PR, provides a GitHub PR or Issue URL, or wants repository-guided code review.
+description: Review a GitHub PR against its repository guidance. Use for PR URLs, PR numbers, current-branch PRs, or linked GitHub issues.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 
