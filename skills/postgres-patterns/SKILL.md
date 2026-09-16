@@ -1,6 +1,6 @@
 ---
 name: postgres-patterns
-description: Use when changing a PostgreSQL schema, index, query plan, or database security boundary.
+description: Use when writing SQL, migrations, indexes, or RLS policies, or diagnosing slow PostgreSQL queries.
 ---
 
 # PostgreSQL Patterns
@@ -138,7 +138,6 @@ SELECT pg_reload_conf();
 ## Related
 
 - Agent: `database-reviewer` - Full database review workflow
-- Skill: `clickhouse-io` - ClickHouse analytics patterns
 - Skill: `backend-patterns` - API and backend patterns
 
 ---
