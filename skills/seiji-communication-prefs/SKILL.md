@@ -1,6 +1,6 @@
 ---
 name: seiji-communication-prefs
-description: Use in every interaction with seiji (n-seiji) — deciding report granularity, when to ask for confirmation, tone and language, how to surface progress and deliverable locations, and how to run design/spec discussions. Apply throughout, not just at task end.
+description: Use when communicating with seiji about progress, decisions, review gates, or deliverables.
 ---
 
 # seiji's reporting and communication preferences

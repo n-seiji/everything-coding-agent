@@ -88,7 +88,7 @@ Codex はトップレベルの `commands/` ディレクトリを読み込まな�
 - `continuous-learning` — SessionEnd 時に長いセッションを検出し、再利用可能なパターンを掘り起こす価値があると示す。学習済み skill として保存するのは手動のステップ。
 - `strategic-compact` — タスクのフェーズを通じてコンテキストを保持するため、論理的な区切りで手動でのコンテキスト圧縮を提案する。
 - `iterative-retrieval` — subagent のコンテキスト問題を解決するために、コンテキスト取得を段階的に洗練させていくパターン。
-- `project-guidelines-example` — アーキテクチャ、コードパターン、テスト要件、デプロイワークフローを示す、プロジェクト固有ガイドライン skill のサンプルテンプレート。
+- サンプルテンプレート: `docs/examples/project-guidelines-skill.md`（skill としてはインストールされない）。Codex の command 型 workflow 12 件は明示実行専用で、PR review skills は暗黙の呼び出しにも対応する。
 - `security-review` — 認証、ユーザー入力、シークレット、API エンドポイント、決済・機密機能のためのセキュリティチェックリストとパターン。
 
 **言語とフレームワーク**

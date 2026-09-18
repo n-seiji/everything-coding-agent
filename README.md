@@ -26,7 +26,7 @@ To use a local checkout, add its absolute path as the marketplace and install fr
 
 To update: `codex plugin marketplace upgrade n-seiji`, then remove and re-add the plugin (`codex plugin remove everything-coding-agent@n-seiji` followed by `codex plugin add everything-coding-agent@n-seiji`).
 
-Codex does not read the top-level `commands/` directory. The same workflows are available to Codex as `plugins/everything-coding-agent/skills/<name>/SKILL.md`.
+Codex does not read the top-level `commands/` directory. The same workflows are available to Codex as `plugins/everything-coding-agent/skills/<name>/SKILL.md`. The 12 command workflows require explicit invocation; PR review skills remain available for implicit invocation.
 
 ## Layout
 
@@ -86,7 +86,7 @@ Maintenance rules: keep `skills/everything-coding-agent/` and `plugins/everythin
 - `continuous-learning` — flags long sessions at SessionEnd as worth mining for reusable patterns; saving a learned skill is a manual step.
 - `strategic-compact` — suggests manual context compaction at logical intervals to preserve context through task phases.
 - `iterative-retrieval` — a pattern for progressively refining context retrieval to solve the subagent context problem.
-- `project-guidelines-example` — an example project-specific guidelines skill template showing architecture, code patterns, testing requirements, and deployment workflow.
+- Example template: `docs/examples/project-guidelines-skill.md` (not installed as a skill).
 - `security-review` — a security checklist and patterns for authentication, user input, secrets, API endpoints, and payment/sensitive features.
 - `github-issue-ops` — issue bookkeeping: ask before setting fields, self-assign on start, keep status in sync, and link a PR into the issue's Development panel.
 - `skill-review` — review a skill you just wrote against OpenAI's skill-authoring guidance before committing it.

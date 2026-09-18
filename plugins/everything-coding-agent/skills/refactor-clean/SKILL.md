@@ -1,6 +1,6 @@
 ---
 name: refactor-clean
-description: Safely refactor or remove dead code with verification. Use when the user invokes refactor-clean or asks to clean up unused code.
+description: Refactor or remove dead code. Use when explicitly invoking the refactor-clean workflow.
 allowed-tools: Bash, Read, Write, Edit, bash, read_file, write_file
 ---
 
