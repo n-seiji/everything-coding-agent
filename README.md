@@ -88,6 +88,7 @@ Maintenance rules: keep `skills/everything-coding-agent/` and `plugins/everythin
 - `iterative-retrieval` — a pattern for progressively refining context retrieval to solve the subagent context problem.
 - `project-guidelines-example` — an example project-specific guidelines skill template showing architecture, code patterns, testing requirements, and deployment workflow.
 - `security-review` — a security checklist and patterns for authentication, user input, secrets, API endpoints, and payment/sensitive features.
+- `github-issue-ops` — `gh` CLI mechanics for issue field hearing, self-assignment on start, status updates (Projects field or label fallback), and linking a PR into an issue's Development panel.
 
 **Language and framework**
 - `coding-standards` — TypeScript/JavaScript standards for naming, immutability, error handling, input validation, and file layout.
