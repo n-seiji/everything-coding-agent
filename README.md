@@ -88,7 +88,8 @@ Maintenance rules: keep `skills/everything-coding-agent/` and `plugins/everythin
 - `iterative-retrieval` — a pattern for progressively refining context retrieval to solve the subagent context problem.
 - `project-guidelines-example` — an example project-specific guidelines skill template showing architecture, code patterns, testing requirements, and deployment workflow.
 - `security-review` — a security checklist and patterns for authentication, user input, secrets, API endpoints, and payment/sensitive features.
-- `github-issue-ops` — `gh` CLI mechanics for issue field hearing, self-assignment on start, status updates (Projects field or label fallback), and linking a PR into an issue's Development panel.
+- `github-issue-ops` — issue bookkeeping: ask before setting fields, self-assign on start, keep status in sync, and link a PR into the issue's Development panel.
+- `skill-review` — review a skill you just wrote against OpenAI's skill-authoring guidance before committing it.
 
 **Language and framework**
 - `coding-standards` — TypeScript/JavaScript standards for naming, immutability, error handling, input validation, and file layout.
