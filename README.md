@@ -67,15 +67,16 @@ Maintenance rules: keep `skills/everything-coding-agent/` and `plugins/everythin
 | `architect` | Software architecture specialist for system design, scalability, and technical decision-making. Use PROACTIVELY when planning new features, refactoring large systems, or making architectural decisions. |
 | `build-error-resolver` | Build and TypeScript error resolution specialist. Use PROACTIVELY when build fails or type errors occur. Fixes build/type errors only with minimal diffs, no architectural edits. Focuses on getting the build green quickly. |
 | `code-reviewer` | Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code. MUST BE USED for all code changes. |
-| `database-reviewer` | PostgreSQL database specialist for query optimization, schema design, security, and performance. Use PROACTIVELY when writing SQL, creating migrations, designing schemas, or troubleshooting database performance. Incorporates Supabase best practices. |
 | `design-mockup-author` | Use only from the ui-directions skill, when a set of `.dc.html` artboards for a Claude Design canvas must be produced from given design tokens and component specs. |
 | `doc-updater` | Use when README, guides, or architecture docs drift from the code; regenerates and updates documentation from package scripts, env examples, and source. |
 | `e2e-runner` | Use when generating, running, or debugging Playwright end-to-end tests for a user journey; manages journeys, quarantines flaky tests, and collects screenshots, videos, and traces. |
 | `go-build-resolver` | Go build, vet, and compilation error resolution specialist. Fixes build errors, go vet issues, and linter warnings with minimal changes. Use when Go builds fail. |
 | `go-reviewer` | Expert Go code reviewer specializing in idiomatic Go, concurrency patterns, error handling, and performance. Use for all Go code changes. MUST BE USED for Go projects. |
+| `persona-tester` | Walks through an app as a defined user persona (from the project's `docs/personas/`) and reports where that person would get lost, blocked, or excluded. Use after UI or flow changes. |
 | `planner` | Expert planning specialist for complex features and refactoring. Use PROACTIVELY when users request feature implementation, architectural changes, or complex refactoring. Automatically activated for planning tasks. |
 | `refactor-cleaner` | Dead code cleanup and consolidation specialist. Use PROACTIVELY for removing unused code, duplicates, and refactoring. Runs analysis tools (knip, depcheck, ts-prune) to identify dead code and safely removes it. |
 | `security-reviewer` | Security vulnerability detection and remediation specialist. Use PROACTIVELY after writing code that handles user input, authentication, API endpoints, or sensitive data. Flags secrets, SSRF, injection, unsafe crypto, and OWASP Top 10 vulnerabilities. |
+| `spec-reviewer` | Read-only specification reviewer. Use before implementing (requirements and the project's risk rules) and after (diff still matches the requirements). Reads the project's own rules rather than assuming any. |
 | `tdd-guide` | Use when implementing a new behavior or fixing a bug: drives the change through a TODO list and small red-green-refactor cycles, with tests written as behavior statements. Also use to add characterization tests before changing unfamiliar code. |
 | `ui-verifier` | Verifies a running web app in the user's real Chrome (Claude in Chrome) and reports measured facts. Use PROACTIVELY after UI changes, before reporting work as done, and when a PR needs verification evidence (screenshots, measured values). |
 
@@ -97,9 +98,6 @@ Maintenance rules: keep `skills/everything-coding-agent/` and `plugins/everythin
 - `backend-patterns` — Node.js/Express/Next.js API patterns: routes, repositories, caching, auth middleware, and background jobs.
 - `golang-patterns` — idiomatic Go patterns and conventions.
 - `golang-testing` — Go testing patterns: table-driven tests, subtests, benchmarks, fuzzing, coverage.
-
-**Data**
-- `postgres-patterns` — PostgreSQL patterns for query optimization, schema design, indexing, and security.
 
 **UI**
 - `ui-directions` — lay out several UI direction options side by side for the user to choose from.
