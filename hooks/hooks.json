@@ -7,16 +7,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{const i=JSON.parse(d);const cmd=i.tool_input?.command||'';if(/(npm run dev|pnpm( run)? dev|yarn dev|bun run dev)/.test(cmd)&&!process.env.TMUX){console.error('[Hook] BLOCKED: Dev server must run in tmux for log access');console.error('[Hook] Use: tmux new-session -d -s dev \\\"npm run dev\\\"');console.error('[Hook] Then: tmux attach -t dev');process.exit(1)}console.log(d)})\""
-          }
-        ],
-        "description": "Block dev servers outside tmux - ensures you can access logs"
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
             "command": "node -e \"let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{const i=JSON.parse(d);const cmd=i.tool_input?.command||'';if(/(npm (install|test)|pnpm (install|test)|yarn (install|test)?|bun (install|test)|cargo build|make |docker |pytest|vitest|playwright)/.test(cmd)&&!process.env.TMUX){console.error('[Hook] Consider running in tmux for session persistence');console.error('[Hook] tmux new -s dev  |  tmux attach -t dev')}console.log(d)})\""
           }
         ],
