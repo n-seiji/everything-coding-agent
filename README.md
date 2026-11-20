@@ -114,7 +114,6 @@ Hooks are defined in `hooks/hooks.json`, with implementations in `scripts/hooks/
 
 | Event | What it does |
 |-------|--------------|
-| `PreToolUse` (Bash) | Blocks running a dev server (`npm run dev` and equivalents) outside tmux, so logs stay accessible. |
 | `PreToolUse` (Bash) | Reminds you to use tmux for long-running commands (install, test, build, docker, etc.) when not already inside tmux. |
 | `PreToolUse` (Bash) | Reminds you to review changes before `git push`. |
 | `PreToolUse` (Write) | Blocks creation of new `.md`/`.txt` files outside a small set of exempt locations, to keep documentation consolidated. |
@@ -129,7 +128,7 @@ Hooks are defined in `hooks/hooks.json`, with implementations in `scripts/hooks/
 | `Stop` | Checks for `console.log` in modified files after each response. |
 | `SessionEnd` | Persists session state and evaluates the session for extractable patterns. |
 
-Two hooks block tool calls outright: the dev-server-outside-tmux check and the new-markdown-file check (which exempts README/CLAUDE/AGENTS/CONTRIBUTING files, any `.md` under `skills/`, `agents/`, `commands/`, `docs/`, `.claude/`, `.claude-plugin/`, and files under `/tmp` or `/private/tmp`). Remove either hook from `hooks/hooks.json` or override it in your own settings if it gets in the way.
+One hook blocks tool calls outright: the new-markdown-file check (which exempts README/CLAUDE/AGENTS/CONTRIBUTING files, any `.md` under `skills/`, `agents/`, `commands/`, `docs/`, `.claude/`, `.claude-plugin/`, and files under `/tmp` or `/private/tmp`). Remove it from `hooks/hooks.json` or override it in your own settings if it gets in the way.
 
 ## Prerequisites
 
